@@ -28,6 +28,7 @@ export class CartService {
   }
 
   getShippingPrices(): any {
+    // TODO: ass type information
     return this.http.get('assets/shipping.json');
   }
 }
