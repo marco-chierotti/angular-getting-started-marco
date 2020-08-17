@@ -5,6 +5,8 @@ import { CartService } from '../cart.service';
 import { Product } from '../product';
 import { ProductService } from '../product.service';
 
+import { first } from 'rxjs/operators';
+
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
@@ -23,7 +25,14 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.productId = params.get('productId'); 
-      this.product = this.productService.getItem(this.productId);
+
+      // select the specific product from the list
+      this.productService.getItems().pipe(first())
+      .subscribe(val => {
+        //let myJSON2 : string = JSON.stringify(val);
+        //console.log("val " + myJSON2);
+        this.product = val.find( v => v.productId == this.productId)});
+
     });
   }
 
