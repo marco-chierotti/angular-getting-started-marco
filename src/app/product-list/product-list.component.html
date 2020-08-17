@@ -8,9 +8,9 @@
     button event binding with ()
     component binding including notifications
 -->
-<div *ngFor="let product of products | async; index as productId">
+<div *ngFor="let product of products | async">
   <h3>
-    <a [title]="product.name + ' details'" [routerLink]="['products',productId]">
+    <a [title]="product.name + ' details'" [routerLink]="['products', product.productId]">
     {{product.name}}
     </a>
   </h3>

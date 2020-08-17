@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 
+import { ShippingInfo } from './shipping-info';
+import { Observable } from 'rxjs';
+
 @Injectable(
   /* NOTE: we do not need to get a root level injector because we register with the root ngModule
   {
@@ -27,8 +30,7 @@ export class CartService {
       return this.items;
   }
 
-  getShippingPrices(): any {
-    // TODO: add type information
-    return this.http.get('assets/shipping.json');
+  getShippingPrices(): Observable<ShippingInfo> {
+    return this.http.get<ShippingInfo>('assets/shipping.json');
   }
 }

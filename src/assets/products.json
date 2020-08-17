@@ -1,25 +1,30 @@
 [
   {
+    "productId" : "0001",
     "name": "Phone XL",
     "price": 799,
     "description": "A large phone with one of the best screens"
   },
   {
+    "productId" : "0002",
     "name": "Phone Mini",
     "price": 699,
     "description": "A great phone with one of the best cameras"
   },
   {
+    "productId" : "0003",
     "name": "Phone Standard",
     "price": 299,
     "description": ""
   },
   {
+    "productId" : "0004",
     "name": "Tablet",
     "price": 349,
     "description": "A great tablet for the price"
   },
   {
+    "productId" : "0005",
     "name": "Powerful Laptop",
     "price": 1299,
     "description": ""
